@@ -74,7 +74,49 @@ if (!isPlaying) {
 </div>
 <div class="entry" id="main">
 <!-- content -->
+<h1 id="objctivec">Objctive-C基础教程</h1>
 
+<ul>
+<li><p>Cocoa 和 Objective-C 是 iOS 和 OS X 的核心, OC 是 C 的超集, 融合了Smalltalk 语言的优势 (面向对象), 1985年, 史蒂夫.乔布斯创立了 NeXT 公司, NeXT公司选用 Unix 作为操作系统, 开发了 NextSTEP (OC 开发的一款用户界面工具包), 1996年, 乔布斯回归 Apple , NextSTEP 改为 Cocoa.</p></li>
+<li><p>Hello World, 第一个 OC 程序:</p></li>
+</ul>
+
+<pre><code class="`">#import &lt;Foundation/Foundation.h&gt;
+int main (int argc, const char *argv[]) {
+    NSLog(@"Hello World");
+    return 0;
+}
+</code></pre>
+
+<ul>
+<li><p>Xcode 通过 <code>.m</code> 拓展名来表示文件使用的是 OC 代码, <code>.cpp</code> 表示使用的是 C++ 代码, <code>.c</code> 表示的是使用 C 代码, Xcode 使用 LLVM 编译器.</p></li>
+<li><p>使用 <code>#import " "</code> 和 使用 <code>#import &lt; &gt;</code> 的好处是无论使用该指令引用相同的头文件多少次 Xcode 只会引用一次.</p></li>
+<li><p><code>NS</code> 是 Cocoa 中所有内容的前缀, 如 <code>NSString</code> <code>NSArray</code> <code>NSMutableDictionary</code> 等. </p></li>
+<li><p><code>NSLog(@" ")</code> 用来打印内容, <code>%@</code> 可以打印字符串, 对象,   C类型的数据.</p></li>
+</ul>
+
+<pre><code>NSLog(@"GaoHe is a %@", @"genius"); //打印字符串
+
+NSLog(@"Tody is %@", [NSDate date]); //打印对象
+
+int a = 10, b = 20;
+NSLog(@"%d + %d = %d", a, b, a + b); //打印 C 类型的数据
+</code></pre>
+
+<ul>
+<li>BOOL 类型提供 <code>YES</code> 和 <code>NO</code> 两个值, BOOL 类型实际上是一种带符号的字符类型 (signed char) 的类型定义 (typedef), 它使用8位的存储空间, 通过 <code>#define</code> 指令将 <code>YES</code> 定义为1 <code>NO</code> 定义为 0, 所以编译器将 BOOL 认作8位二进制数, 注意, 在逻辑判断中不能与 BOOL 中的 <code>YES</code> 进行判断, 因为 与 <code>YES</code> 比较是不安全的.</li>
+</ul>
+
+<pre><code>BOOL isPlaying;
+/**
+*一些逻辑代码
+*/
+if (!isPlaying) {
+    NSLog(@"Is playing now");
+} else {
+    NSLog(@"Is pause now");
+}
+</code></pre>
 <!-- content end -->
 </div>
 <br>
